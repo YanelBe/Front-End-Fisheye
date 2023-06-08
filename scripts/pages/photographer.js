@@ -281,6 +281,6 @@ async function init() {
     //On appelle la fonction servant à incrémenter les likes
     incrementLikes();
   
-  };  
+  }
   
 init();

@@ -1,9 +1,7 @@
 //Variables à utiliser
 const modalBtn = document.getElementById("contact_modal");
-const closeBtn = document.getElementById("close-modal");
 const main = document.getElementById("main");
 const form = document.getElementById("contact-form");
-const formData = document.querySelectorAll(".form-data");
 let isFormValid = false;
 
 // Variables pour la sélection des éléments du formulaire
@@ -12,7 +10,6 @@ const inputLastName = document.getElementById("last-input");
 const inputEmail = document.getElementById("email-input");
 const inputMessage = document.getElementById("message");
 const contactTitle = document.getElementById("contact-title");
-const contactButton = document.querySelector(".contact-button");
 
 // Variables pour les messages d'erreur
 const firstNameErrorMsg = document.getElementById("firstNameErrorMsg");
@@ -27,9 +24,10 @@ const messageErrorMsgContent = "Veuillez entrer au moins 30 caractères.";
 const regExName = new RegExp(/^(?=.{2,32}$)[a-zA-ZÀ-ÿ]+(?:[ -][a-zA-ZÀ-ÿ]+)*$/);
 const regExMail = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
-//On créé une fonction pour récupérer le nom du photographe dans la modale de contact
+//On créé une fonction pour récupérer le nom du photographe dans la modale de contact, et ajouter un aria-labelledby
 function getPhotographerName(data) {
     contactTitle.innerHTML += ` ${data}`;
+    contactTitle.setAttribute("aria-labelledby", "Contact Me" + ` ${data}`);
 }
 
   //On créé une fonction pour afficher la modale de contact
@@ -119,7 +117,7 @@ function formValidate(event) {
         form.reset();
       }
 
-};
+}
 
 //Réinitialiser le formulaire lors du rechargement de la page
 window.addEventListener("beforeunload", () => {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <header>
       <!--Rajout d'un lien pour rediriger vers l'accueil en cliquant sur le logo-->
       <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Logo">
       </a>
     </header>
 
@@ -56,31 +56,31 @@
 			<div class="modal" aria-hidden="true">
 				<header>
           <h2 id="contact-title">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" id="close-modal" alt="Close Contact Form" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" id="close-modal" alt="Close Contact Form" onclick="closeModal()">
         </header>
 
 				<form name="contact" id="contact-form">
 					<div class="form-data">
-						<label id="first" for="First Name">Prénom</label>
-						<input id="first-input" name="first" type="text" aria-label="First Name"/>
+						<label id="first" for="first-input">Prénom</label>
+						<input id="first-input" name="first" type="text" aria-label="First Name">
             <p id="firstNameErrorMsg" class="error-text"><!-- Message d'erreur --></p>
 					</div>
 
           <div class="form-data">
-						<label id="last" for="Last Name">Nom</label>
-						<input id="last-input" name="last" type="text" aria-label="Last Name"/>
+						<label id="last" for="last-input">Nom</label>
+						<input id="last-input" name="last" type="text" aria-label="Last Name">
             <p id="lastNameErrorMsg" class="error-text"><!-- Message d'erreur --></p>
 					</div>
 
           <div class="form-data">
-						<label id="email" for="Email">Email</label>
-						<input id="email-input" name="email" type="text" aria-label="Email"/>
+						<label id="email" for="email-input">Email</label>
+						<input id="email-input" name="email" type="text" aria-label="Email">
             <p id="emailErrorMsg" class="error-text"><!-- Message d'erreur --></p>
 					</div>
 
           <div class="form-data">
-						<label id="contact-message" for="Message">Votre message</label>
-						<textarea id="message" rows="4" id="message" name="message" type="text" aria-label="Your Message" autocomplete="off"></textarea>
+						<label id="contact-message" for="message">Votre message</label>
+						<textarea id="message" rows="4" name="message" aria-label="Your Message" autocomplete="off"></textarea>
             <p id="messageErrorMsg" class="error-text"><!-- Message d'erreur --></p>
 					</div>
 

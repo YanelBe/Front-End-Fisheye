@@ -1,5 +1,5 @@
 function mediaFactory(data) {
-    const { id, photographerId, title, image, video, likes, date, price } = data;
+    const { id, photographerId, title, image, video, likes } = data;
 
     //Variables pour afficher les médias associés aux photographes
     const images = `assets/medias/${photographerId}/${image} `;
