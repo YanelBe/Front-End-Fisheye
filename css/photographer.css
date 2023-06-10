@@ -274,13 +274,21 @@
     font-size: 22px
 }
 
+.lightbox-video:focus {
+    outline: none;
+  }
+
 
 /****** Modale de contact ******/
 
 
 #contact_modal {
     display: none;
-    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-open {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 
@@ -334,7 +342,6 @@
     flex-direction: column;
     align-items: center;
     background-color: #DB8876;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 5px;
     width: 600px;
     height: 800px;

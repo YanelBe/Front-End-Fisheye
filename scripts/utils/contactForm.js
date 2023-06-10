@@ -2,6 +2,7 @@
 const modalBtn = document.getElementById("contact_modal");
 const main = document.getElementById("main");
 const form = document.getElementById("contact-form");
+const contactBtn = document.querySelector(".contact_button");
 let isFormValid = false;
 
 // Variables pour la sélection des éléments du formulaire
@@ -30,18 +31,41 @@ function getPhotographerName(data) {
     contactTitle.setAttribute("aria-labelledby", "Contact Me" + ` ${data}`);
 }
 
-  //On créé une fonction pour afficher la modale de contact
+//Fonction pour la gestion de la fermeture de la modale avec le clavier
+function handleKeyDown(event) {
+    //On récupère l'élément qui correspond à la croix de fermeture de modale
+    const isCloseBtnFocused = document.activeElement.id === "close-modal";
+    //La modale se ferme en appuyant sur échap
+    if (event.key === "Escape") {
+        closeModal();
+    }
+    //Si la croix de fermeture est sélectionnée et que la modale est affichée, la modale se ferme en appuyant sur entrée
+    if (event.key === "Enter" && modalBtn.classList.contains("modal-open") && isCloseBtnFocused) {
+        //On empêche la soumission du formulaire qui est l'action de base de la touche entrée
+        event.preventDefault();
+        closeModal();
+    }
+}
+
+//On créé une fonction pour afficher la modale de contact
 function displayModal() {
     modalBtn.style.display = "block";
     modalBtn.classList.add("modal-open");
     modalBtn.setAttribute("aria-hidden", "false");
     main.setAttribute("aria-hidden", "true");
+    document.addEventListener("keydown", handleKeyDown);
+    //On place le focus sur la première ligne du formulaire de contact
+    inputFirstName.focus();
 }
 
+//On créé une fonction pour fermer la modale de contact
 function closeModal() {
     modalBtn.style.display = "none";
     modalBtn.setAttribute("aria-hidden", "true");
     main.setAttribute("aria-hidden", "false");
+    document.removeEventListener("keydown", handleKeyDown);
+    //On replace le focus sur le bouton de contact
+    contactBtn.focus();
 }
 
 form.addEventListener("submit", formValidate);

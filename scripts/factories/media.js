@@ -24,6 +24,18 @@ function mediaFactory(data) {
             videoElement.setAttribute("tabindex", "0");
             //Cet attribut permet d'afficher les contrôles de lecture de la vidéo
             videoElement.setAttribute("controls", "");
+            
+            //On ajoute un eventListener pour pouvoir lire la vidéo au clavier avec Espace
+            videoElement.addEventListener("keydown", function(event) {
+                if (event.code === "Space") {
+                  event.preventDefault();
+                  if (videoElement.paused) {
+                    videoElement.play();
+                  } else {
+                    videoElement.pause();
+                  }
+                }
+              });
 
             //On créé un élément source pour définir la source de la vidéo, et décrire son format
             const videoSource = document.createElement("source");
@@ -40,6 +52,8 @@ function mediaFactory(data) {
             //Avec .dataset, on accède à l'ID associé à l'image, puis on lui attribue une classe CSS
             img.dataset.id = id
             img.className = "media-image";
+
+            img.setAttribute("tabindex", "0");
 
             img.setAttribute("src", images);
             img.setAttribute("alt", title);

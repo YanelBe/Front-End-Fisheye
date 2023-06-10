@@ -110,6 +110,8 @@ function getLightboxDOM(currentMedia, index, mediasList) {
     lightboxNext.appendChild(nextIcon);
 
     addEventListeners(mediasList, currentMedia);
+
+    setFocusOnVideo();
 }
 
 //Gestion des events
@@ -138,6 +140,11 @@ function addEventListeners(mediasList, currentMedia) {
     });
 }
 
+//Fonction pour mettre le focus sur la vidéo s'il y en a une, pour que la touche espace puisse lire/arrêter la vidéo
+function setFocusOnVideo() {
+    const lightboxVideo = document.querySelector(".lightbox-video");
+    lightboxVideo.focus();
+  }
 
 //Fonction pour la fermeture de la lightbox
 function closeLightbox() {
