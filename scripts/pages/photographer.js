@@ -124,7 +124,7 @@ function sortMedias(medias) {
     filter.onclick = (event) => {
       const clickedFilter = event.target;
 
-      switch (clickedFilter.textContenta) {
+      switch (clickedFilter.textContent) {
         //On réutilise le code précédent par défaut ici
         case "Popularité":
           medias = medias?.sort(sortByLikes);
