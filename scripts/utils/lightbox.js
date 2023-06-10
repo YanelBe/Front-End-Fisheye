@@ -85,6 +85,7 @@ function getLightboxDOM(currentMedia, index, mediasList) {
         lightboxSourceVideo.setAttribute("type", "video/mp4");
         lightboxMedia.appendChild(lightboxVideo);
         lightboxVideo.appendChild(lightboxSourceVideo);
+        setFocusOnVideo()
       }
 
     //Affichade du titre
