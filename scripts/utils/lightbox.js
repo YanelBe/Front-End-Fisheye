@@ -110,8 +110,6 @@ function getLightboxDOM(currentMedia, index, mediasList) {
     lightboxNext.appendChild(nextIcon);
 
     addEventListeners(mediasList, currentMedia);
-
-    setFocusOnVideo();
 }
 
 //Gestion des events
